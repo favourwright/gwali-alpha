@@ -1,0 +1,82 @@
+# turn rewrite engine on
+RewriteEngine on
+# NC makes the rule none case sensitive
+# L makes this the last rule that this specific condition will match
+
+#RewriteBase /
+# this is for the 404 page
+# ErrorDocument 404 /pages/404_error.php
+
+# rewrite the home page
+ReWriteRule ^welcome index.php [NC,L]
+
+######################################
+#        PAGES ON THE SITE           #
+######################################
+# rewrite the contact_us page
+ReWriteRule ^contact-us index.php?page=contact_us [NC,L]
+ReWriteRule ^contact_us index.php?page=contact_us [NC,L]
+
+# rewrite the about page
+ReWriteRule ^about-us index.php?page=about_us [NC,L]
+ReWriteRule ^about index.php?page=about_us [NC,L]
+ReWriteRule ^about_us index.php?page=about_us [NC,L]
+
+# rewrite the terms page
+ReWriteRule ^terms index.php?page=terms [NC,L]
+ReWriteRule ^terms-of-use index.php?page=terms [NC,L]
+ReWriteRule ^terms_of_use index.php?page=terms [NC,L]
+
+# rewrite the terms page
+ReWriteRule ^terms index.php?page=terms [NC,L]
+ReWriteRule ^terms-of-use index.php?page=terms [NC,L]
+ReWriteRule ^terms_of_use index.php?page=terms [NC,L]
+
+# rewrite the privacy page
+ReWriteRule ^privacy index.php?page=privacy_policy [NC,L]
+ReWriteRule ^privacy-policy index.php?page=privacy_policy [NC,L]
+ReWriteRule ^privacy_policy index.php?page=privacy_policy [NC,L]
+
+# rewrite the student setting area page
+ReWriteRule ^settings index.php?page=settings [NC,L]
+
+# rewrite the student profile page
+ReWriteRule ^profile index.php?page=profile [NC,L]
+
+# rewrite the student login page
+ReWriteRule ^login index.php?page=login_signup [NC,L]
+ReWriteRule ^signup index.php?page=login_signup#newMembers [NC,L]
+
+# rewrite the password reset page
+ReWriteRule ^forgot-my-password index.php?page=password_reset [NC,L]
+
+# rewrite for admin dashboard
+ReWriteRule ^admin index.php?page=admin_dashboard [NC,L]
+ReWriteRule ^admin-dashboard index.php?page=admin_dashboard [NC,L]
+ReWriteRule ^admin_dashboard index.php?page=admin_dashboard [NC,L]
+
+# rewrite for admin dashboard
+ReWriteRule ^knowledge-base index.php?page=knowledge_base [NC,L]
+ReWriteRule ^knowledge_base index.php?page=knowledge_base [NC,L]
+
+# rewrite for new writers
+ReWriteRule ^become-our-writer index.php?page=writer [NC,L]
+
+######################################
+#        EACH POSTS VIEW LINK        #
+######################################
+ReWriteRule ^preview/([a-zA-Z]+)/([0-9]+) index.php?page=view_page&$1Id=$2 [NC,L]
+
+
+######################################
+#           KNOWLEDGE BASE           #
+######################################
+#ReWriteRule ^physics-and-astronomy index.php?page=knowledge_base&department=physics_and_astronomy [NC,L]
+#ReWriteRule ^physics_and_astronomy index.php?page=knowledge_base&department=physics_and_astronomy [NC,L]
+#ReWriteRule ^physicsandastronomy index.php?page=knowledge_base&department=physics_and_astronomy [NC,L]
+#ReWriteRule ^physicsAndAstronomy index.php?page=knowledge_base&department=physics_and_astronomy [NC,L]
+#ReWriteRule ^physicsastro index.php?page=knowledge_base&department=physics_and_astronomy [NC,L]
+
+ReWriteRule ^knowledge-base/([a-zA-Z-_]+) index.php?page=knowledge_base&department=$1 [NC,L]
+ReWriteRule ^knowledge_base/([a-zA-Z-_]+) index.php?page=knowledge_base&department=$1 [NC,L]
+ReWriteRule ^department/([a-zA-Z-_]+) index.php?page=knowledge_base&department=$1 [NC,L]
